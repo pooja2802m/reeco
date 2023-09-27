@@ -1,3 +1,4 @@
+import { ShoppingCartOutlined } from "@ant-design/icons";
 import {
   OrderItem,
   OrderItemName,
@@ -7,6 +8,7 @@ import {
 } from "../styles/orderDetailStyles";
 
 function OrderMainDetails() {
+  const categoryIcons = Array(8).fill(<ShoppingCartOutlined />);
   return (
     <MainContainer>
       <OrderMainSecondaryContainer>
@@ -16,7 +18,7 @@ function OrderMainDetails() {
         </OrderItem>
         <OrderItem>
           <OrderItemName>Shipping date</OrderItemName>
-          <OrderItemValue>Thu, Fev 10</OrderItemValue>
+          <OrderItemValue>Thu, Feb 10</OrderItemValue>
         </OrderItem>
         <OrderItem>
           <OrderItemName>Total</OrderItemName>
@@ -24,7 +26,11 @@ function OrderMainDetails() {
         </OrderItem>
         <OrderItem>
           <OrderItemName>Category</OrderItemName>
-          <OrderItemValue></OrderItemValue>
+          <OrderItemValue
+            style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}
+          >
+            {categoryIcons}
+          </OrderItemValue>
         </OrderItem>
         <OrderItem>
           <OrderItemName>Department</OrderItemName>

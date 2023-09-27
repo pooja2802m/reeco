@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import DummyProductData from "../dummyData.json";
-import { Fragment, useEffect } from "react";
+import { useEffect } from "react";
 import {
   listProducts,
   updateProductStatus,
@@ -18,7 +18,7 @@ import {
   SearchInputBox,
 } from "../styles/orderDetailStyles";
 
-import { Image, Input, Space, Table, Tag } from "antd";
+import { Image, Space, Table } from "antd";
 import {
   CheckOutlined,
   CloseOutlined,
@@ -27,12 +27,18 @@ import {
 } from "@ant-design/icons";
 import { useState } from "react";
 import UpdateStatusPopup from "./updateStatusPopup";
+import EditPopup from "./editPopup";
 
 function Products() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
 
   const [product, setProduct] = useState({});
+
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const showEditModal = () => {
+    setIsEditModalOpen(!isEditModalOpen);
+  };
 
   const columns = [
     {
@@ -79,15 +85,32 @@ function Products() {
       key: "action",
       render: (_, record) => (
         <Space size="middle">
-          <span onClick={() => handleStatus("approved", record)}>
+          <span
+            onClick={() =>
+              record.status !== "price and quantity updated"
+                ? handleStatus("approved", record)
+                : null
+            }
+          >
             <CheckOutlined
               style={{
-                color: record.status === "approved" ? "#1ef638" : "gray",
+                color:
+                  record.status === "approved" ||
+                  record.status === "price and quantity updated"
+                    ? "#1ef638"
+                    : "gray",
                 fontSize: "20px",
               }}
             />
           </span>
-          <span onClick={() => handleStatus("rejected", record)}>
+          <span
+            onClick={() =>
+              record.status !== "approved" &&
+              record.status !== "price and quantity updated"
+                ? handleStatus("rejected", record)
+                : null
+            }
+          >
             <CloseOutlined
               style={{
                 color:
@@ -100,14 +123,19 @@ function Products() {
               }}
             />
           </span>
-          <span>Edit</span>
+          <span onClick={() => handleEdit(record)}>Edit</span>
         </Space>
       ),
     },
   ];
 
+  const handleEdit = (product) => {
+    console.log(product, "product");
+    setProduct(product);
+    showEditModal();
+  };
+
   const handleStatus = (type, selectedProduct) => {
-    console.log(type, selectedProduct, "type, product");
     if (type === "rejected") {
       setProduct(selectedProduct);
       showModal();
@@ -163,6 +191,14 @@ function Products() {
           showModal={showModal}
           isModalOpen={isModalOpen}
           onUpdate={(type, product) => handleStatus(type, product)}
+        />
+      )}
+
+      {isEditModalOpen && (
+        <EditPopup
+          product={product}
+          showEditModal={showEditModal}
+          isEditModalOpen={isEditModalOpen}
         />
       )}
     </div>

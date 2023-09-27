@@ -12,16 +12,26 @@ export const productSlice = createSlice({
       state.products = action.payload;
     },
     updateProductStatus: (state, action) => {
-      console.log("action.payload", action.payload);
       const { id, type } = action.payload;
       const itemToUpdate = state.products.find((item) => item.id === id);
       if (itemToUpdate) {
         itemToUpdate.status = type;
       }
     },
+    updateProductDetails: (state, action) => {
+      const { id, status, price, quantity, total } = action.payload;
+      const itemToUpdate = state.products.find((item) => item.id === id);
+      if (itemToUpdate) {
+        itemToUpdate.status = status;
+        itemToUpdate.price = price;
+        itemToUpdate.quantity = quantity;
+        itemToUpdate.total = total;
+      }
+    },
   },
 });
 
-export const { listProducts, updateProductStatus } = productSlice.actions;
+export const { listProducts, updateProductStatus, updateProductDetails } =
+  productSlice.actions;
 
 export default productSlice.reducer;

@@ -5,10 +5,7 @@ function Layout({ children }) {
   return (
     <div className="layout">
       <PageHeader />
-      <main className="content">
-        {/* Content */}
-        {children}
-      </main>
+      <main className="content">{children}</main>
     </div>
   );
 }

@@ -125,7 +125,7 @@ export const SearchInput = styled(Input)`
 
 export const ProductStatus = styled.span`
   background: ${(props) =>
-    props.status === "approved"
+    props.status === "approved" || props.status === "price and quantity updated"
       ? "green"
       : props.status === "missing"
       ? "orange"
@@ -137,4 +137,110 @@ export const ProductStatus = styled.span`
   border: none;
   border-radius: 20px;
   text-transform: capitalize;
+`;
+
+//edit popup
+export const EditPopupContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+`;
+export const EditPopupImageContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const EditPopupImage = styled.img`
+  width: 100px;
+`;
+export const EditPopupPriceContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+`;
+
+export const EditPopupPriceInnerContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: flex-start;
+`;
+
+export const EditLabel = styled.div`
+  width: 30%;
+  font-size: 18px;
+  color: gray;
+`;
+
+export const EditInputContainer = styled.div`
+  /* width: 70%; */
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+`;
+
+export const IncrementDecrementButton = styled.button`
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background-color: #26b716;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+`;
+export const EditPopUpFooter = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+`;
+
+export const CancelButton = styled.button`
+  padding: 10px;
+  border-radius: 50%;
+
+  background-color: #fff;
+  color: #004d25;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+`;
+
+export const SendButton = styled.button`
+  padding: 10px 20px;
+  border-radius: 20px;
+
+  background-color: #004d25;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+`;
+
+export const ReasonMainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+export const ReasonHeading = styled.div`
+  font-size: 18px;
+  font-weight: 600;
+  font-family: Arial;
+`;
+
+export const ReasonsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+`;
+
+export const ReasonLabel = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding: 10px 20px;
+  border: 1px solid gray;
+  background: transparent;
+  color: gray;
+  border-radius: 20px;
 `;

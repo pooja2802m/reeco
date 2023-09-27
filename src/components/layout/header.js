@@ -38,8 +38,15 @@ function PageHeader() {
         <HeaderLeft>
           <NavContainer>
             <li>
-              <Badge size="default" count={1} color="hsl(102, 53%, 61%)">
-                <ShoppingCartOutlined style={{ fontSize: "20px" }} />
+              <Badge
+                size="default"
+                count={1}
+                color="#52c41a"
+                style={{ width: "10px" }}
+              >
+                <ShoppingCartOutlined
+                  style={{ fontSize: "20px", color: "#d3d3d3" }}
+                />
               </Badge>
             </li>
             <li>
