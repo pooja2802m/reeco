@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "Spicy Chicken Sandwich",
+    "brand": "Delicious Eats",
+    "price": 8.99,
+    "quantity": 3,
+    "total": 26.97,
+    "status": "",
+    "image": "./img/Avocado.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Margherita Pizza",
+    "brand": "Pizza Palace",
+    "price": 12.49,
+    "quantity": 2,
+    "total": 24.98,
+    "status": "",
+    "image": "./img/Avocado.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Vegetable Stir-Fry",
+    "brand": "Wok n' Roll",
+    "price": 9.99,
+    "quantity": 1,
+    "total": 9.99,
+    "status": "",
+    "image": "./img/Avocado.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Classic Cheeseburger",
+    "brand": "Burger Bliss",
+    "price": 7.99,
+    "quantity": 4,
+    "total": 31.96,
+    "status": "",
+    "image": "./img/Avocado.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Sushi Platter",
+    "brand": "Sushi Master",
+    "price": 22.99,
+    "quantity": 1,
+    "total": 22.99,
+    "status": "",
+    "image": "./img/Avocado.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Caesar Salad",
+    "brand": "Salad Sensation",
+    "price": 6.99,
+    "quantity": 2,
+    "total": 13.98,
+    "status": "",
+    "image": "./img/Avocado.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Chocolate Brownie",
+    "brand": "Sweet Treats",
+    "price": 3.49,
+    "quantity": 5,
+    "total": 17.45,
+    "status": "",
+    "image": "./img/Avocado.jpg"
+  },
+  {
+    "id": 8,
+    "name": "BBQ Pulled Pork Sandwich",
+    "brand": "Smokehouse BBQ",
+    "price": 10.99,
+    "quantity": 2,
+    "total": 21.98,
+    "status": "",
+    "image": "./img/Avocado.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Mango Tango Smoothie",
+    "brand": "Smoothie Paradise",
+    "price": 5.99,
+    "quantity": 3,
+    "total": 17.97,
+    "status": "",
+    "image": "./img/Avocado.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Pho Noodle Soup",
+    "brand": "Pho House",
+    "price": 11.99,
+    "quantity": 2,
+    "total": 23.98,
+    "status": "",
+    "image": "./img/Avocado.jpg"
+  }
+]
